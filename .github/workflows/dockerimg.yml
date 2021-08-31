@@ -1,0 +1,16 @@
+name: Deploying docker image 
+
+on: push
+
+jobs:
+ build:
+  runs-on: ubuntu-latest
+  steps:
+   - uses: action/checkout@v2
+   - name: building docker image
+     run: |
+       docker build ./ -t myimg .
+   -  name: Running docker container
+      run: |
+       docker run -d -p 1212:3000 myimg
+   
