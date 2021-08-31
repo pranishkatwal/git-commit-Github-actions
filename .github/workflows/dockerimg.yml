@@ -7,7 +7,7 @@ jobs:
   steps:
    - uses: actions/checkout@v2
    - name: building docker image
-     
+     run: docker build ./ -t nodejs 
        
    - name: Build and push image
      id: docker_build
@@ -17,8 +17,7 @@ jobs:
       file: ./Dockerfile
       push: true
       registry: dockerhub-and-github-actions/mying
-     
-     
+      id: tag
  
  
    
