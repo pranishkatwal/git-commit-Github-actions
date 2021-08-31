@@ -1,16 +1,11 @@
-name: Deploying docker image 
+name: Pushing image to docker hub 
 
 on: push
-
 jobs:
  build:
   runs-on: ubuntu-latest
   steps:
-   - uses: actions/checkout@v2
-   - name: building docker image
-     run: |
-       docker build ./ -t mying 
-   -  name: Running docker container
-      run: |
-       docker run -d -p 1212:3000 mying
-   
+   - name: Login to docker hub
+   - uses: docker/login-action@v1 
+     with: 
+       username: 
