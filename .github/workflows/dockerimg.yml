@@ -20,6 +20,8 @@ jobs:
       context: ./
       file: ./Dockerfile
       push: true
+      repository: pkatwal/pranish
+      tag: latest
  
    
    
