@@ -17,7 +17,7 @@ jobs:
       context: ./
       file: ./Dockerfile
       push: true
-      tag: pkatwal/pranish:latest
+      registry: dockerhub-and-github-actions/mying
       
       
  
