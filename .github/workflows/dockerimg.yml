@@ -15,7 +15,6 @@ jobs:
    - name: building docker image
      run: docker build ./ -t nodejs 
       
-    
    - name: Build and push image
      id: docker_build
      uses: docker/build-push-action@v2
