@@ -18,7 +18,7 @@ jobs:
       file: ./Dockerfile
       push: true
       registry: dockerhub-and-github-actions/mying
-      
+      tag: v1
       
  
    
