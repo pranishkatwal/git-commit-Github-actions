@@ -9,8 +9,8 @@ jobs:
    - uses: actions/checkout@v2
    - name: building docker image
      run: |
-       docker build ../ -t dockerfile 
+       docker build ./ -t mying 
    -  name: Running docker container
       run: |
-       docker run -d -p 1212:3000 dockerfile
+       docker run -d -p 1212:3000 mying
    
