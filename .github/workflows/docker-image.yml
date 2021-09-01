@@ -27,6 +27,6 @@ jobs:
       
     - name: Docker Push to docker hub 
       run: |
-       docker push pkatwal/gitcommit:$GIT_COMMIT
+       docker push pkatwal/gitcommit:{$GIT_COMMIT}
    
 
