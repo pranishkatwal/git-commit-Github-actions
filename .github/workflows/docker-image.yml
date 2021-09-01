@@ -21,4 +21,5 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
       
-
+    - name: Docker Push to docker hub 
+      run: docker push ${{secrets.DOCKER_USER}}/github
