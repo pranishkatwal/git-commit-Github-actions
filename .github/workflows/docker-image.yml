@@ -10,12 +10,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2      
-    
-    - name: Build the tagged Docker image
-      run: |
-       export GIT_COMMIT=$(git log -1 --format=%h)
-       run: | 
-       docker build . --file Dockerfile --tag pkatwal/gitcommit:$GIT_COMMIT
+  
     
       
     - name: docker login
@@ -25,7 +20,7 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD  
       
-    - name: Build the tagged Docker image
+    - name: Build and push tagged Docker image
       run: |
        export GIT_COMMIT=$(git log -1 --format=%h)
        run: | 
