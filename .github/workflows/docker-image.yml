@@ -26,6 +26,6 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
       
       
- #   - name: Docker Push to docker hub 
-  #    run: docker push ${{secrets.DOCKER_USER}}/github:${{steps.vars.outputs.tag}}
+    - name: Docker Push to docker hub 
+      run: docker push ${{secrets.DOCKER_USER}}/gitcommit:$GIT_COMMIT
 
