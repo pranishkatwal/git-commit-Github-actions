@@ -23,7 +23,7 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
       
     - name: Tag a docker image 
-      run: docker tag mynewimg pkatwal/github
+      run: docker tag mynewimg pkatwal/github .
       
     - name: Docker Push to docker hub 
       run: docker push ${{secrets.DOCKER_USER}}/github:mynewimg
