@@ -13,7 +13,10 @@ jobs:
     
       
     - name: Build the tagged Docker image
-      run: docker build . --file Dockerfile --tag pkatwal/gitcommit:$GIT_COMMIT
+      run: |
+       export GIT_COMMIT=$(git log -1 --format=%h)
+       run: | 
+       docker build . --file Dockerfile --tag pkatwal/gitcommit:$GIT_COMMIT
       
     - name: docker login
       env:
