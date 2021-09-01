@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v2      
     
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --build-arg git_commit=$(git log -1 --format=%h)
+      run: docker build . --file Dockerfile --build-arg GIT_COMMIT=$(git log -1 --format=%h)
       
     - name: docker login
       env:
@@ -22,4 +22,4 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
       
     - name: Docker Push to docker hub 
-    - run: docker push pkatwal/github:git_commit
+    - run: docker push pkatwal/github:GIT_COMMIT
