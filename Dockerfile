@@ -14,4 +14,8 @@ COPY package*.json ./
 RUN npm install
 COPY --from=0 /usr/src/app/build ./build
 EXPOSE 80
+
+ARG GIT_COMMIT=unspecified
+LABEL git_commit=$GIT_COMMIT
+
 CMD npm start
