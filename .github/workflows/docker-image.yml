@@ -23,5 +23,5 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag pkatwal/github:$(date +%s)
       
-    - name: Docker Push
-      run: docker push pkatwal/github
+    - name: Docker Push to docker hub 
+      run: docker push ${{secrets.DOCKER_USER}}/github
