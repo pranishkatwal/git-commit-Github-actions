@@ -11,13 +11,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2      
     
-    
-    - name: Get the version
-      id: vars
-      run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
       
     - name: Build the tagged Docker image
-      run: docker build . --file Dockerfile --tag pkatwal/gitcommit:${{steps.vars.outputs.tag}}
+      run: docker build . --file Dockerfile --tag pkatwal/gitcommit:$GIT_COMMIT
       
     - name: docker login
       env:
