@@ -22,4 +22,4 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
       
     - name: Docker Push to docker hub 
-      run: docker push git_commit
+      run: docker push pkatwal/github:git_commit
