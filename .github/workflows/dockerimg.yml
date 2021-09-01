@@ -1,29 +1,27 @@
-name: Docker Image and CI
+name: Docker Image CI
 
-on: 
- push: 
-  branches: [master]
- pull_request: 
-  branches: [master]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
- build: 
-   runs-on: ubuntu-latest
-   steps:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
     - uses: actions/checkout@v2
     - name: docker login
-      env: 
+      env:
         USERNAME: ${{secrets.USERNAME}}
         PASSWORD: ${{secrets.PASSWORD}}
       run: |
-       docker login -u $USERNAME -p $PASSWORD
-       
-    - name: Build the docker image
-      run: docker build . --file Dockerfile --tag pkatwal/pranish
-       
-    - name: Push image to the docker hub 
-      run: docker push pkatwal/pranish
+        docker login -u $USERNAME -p $PASSWORD 
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag pkatwal/github:$(date +%s)
       
-      
-     
- 
+    - name: Docker Push
+      run: docker push pkatwal/github
