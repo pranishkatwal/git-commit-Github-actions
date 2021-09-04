@@ -1,0 +1,9 @@
+version: '3.3'
+services: 
+   react:
+      build: 
+        context: .
+        dockerfile: Dockerfile
+      container_name: ReactWebApp
+      ports: 
+        - 3000:80
